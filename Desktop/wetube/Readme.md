@@ -1,17 +1,44 @@
-### Package.json
+# 기간
 
-Node.js 프로젝트의 메타데이터 파일입니다. 이 파일은 프로젝트의 정보를 담고 있으며, npm과 같은 패키지 관리자가 사용합니다. package.json 파일에는 프로젝트의 이름, 버전, 설명, 스크립트, 의존성 및 개발 의존성 등이 포함될 수 있습니다
+2023.04.15 ~ 2023.04.24
 
-- **dependencies**: 프로덕션 환경에서 애플리케이션에 필요한 패키지
-- **devDependencies**: 로컬 개발 및 테스트에만 필요한 패키지
-- **scripts**: npm 스크립트를 정의하는 곳입니다. 이 스크립트는 **`npm run`** 명령어를 사용하여 실행할 수 있습니다.
+# Objective
 
-### Babel
+- Node.js에 대한 전반적인 이해도 상승
+- MongoDB로 CRUD 만들기
+- 비디오 플레이어 만들기
+- 제공된 블루프린트를 바탕으로 로그인 Auth 시스템 만들기
 
-Babel은 JavaScript 컴파일러입니다. Babel은 ECMAScript 2015+ 코드를 현재 및 이전 브라우저 또는 환경에서 호환 가능한 JavaScript 버전으로 변환하는 데 주로 사용됩니다. Babel은 다음과 같은 작업을 할 수 있습니다.
+# STACK
 
-### Middleware
+- ES6
+- NodeJS
+- Pug
+- MogoDB
 
-- Node.js에서 미들웨어는 애플리케이션의 요청-응답 주기에서 특정 작업을 수행하는 소프트웨어 구성 요소 주로 Express.js 같은 웹 프레임워크에서 미들웨어를 사용합니다.
-- 미들웨어는 요청 (request)과 응답 (response) 사이에서 실행되는 함수입니다. 미들웨어는 요청을 받아들이고, 필요한 작업을 수행한 후, 다음 미들웨어 또는 라우터로 전달합니다. 미들웨어는 기능을 재사용하거나, 코드를 모듈화하는 데 도움이 됩니다
-- 미들웨어의 역할로는 요청 및 응답 객체 수정, 인증 및 권한 검사, 로깅 및 에러 처리 등이 있습니다. 이러한 역할을 수행하기 위해 다양한 서드파티 미들웨어가 개발되었습니다
+# Router
+
+### global
+
+- / → Home
+- /join → Join
+- /login → Login
+- /search → Search
+
+### users
+
+- /users/:id → user
+- /users/logout → Logout
+- /users/edit → Edit my profile
+- /users/delete → Delete my profile
+
+### Videos
+
+- /videos/:id → Watch videos
+- /videos/:id/edit → Edit Video
+- /videos/:id/delete → Delete Video
+
+### Video Comments
+
+- /videos/comments → Comment on a video
+- /videos/comments/delete → Delete a comment of a video
