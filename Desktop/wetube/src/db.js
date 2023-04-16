@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect(
-  "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=Youtube_Clone"
-);
+mongoose.connect("mongodb://127.0.0.1:27017/Youtube_Clone");
 
 const db = mongoose.connection;
 

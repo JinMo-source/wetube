@@ -3,6 +3,8 @@ include mixins/video
 
 block content
     h2 Welcome to wetube
-    a(href="/video/edit") Edit
-    each info in videos
-        + video(info)
+    a(href="/video/upload") Upload
+    each video in videos
+        +video(video)
+    else
+        span.empty__message No videos found
