@@ -6,8 +6,12 @@ export const see = (req, res) => {
     return res.send("see");
   }
 };
-export const videoEdit = (req, res) => {
-  return res.send("videoEdit");
+export const getEdit = (req, res) => {
+  return res.render("edit", { pageTitle: "EDIT" });
+};
+export const postEdit = (req, res) => {
+  console.log(req.body);
+  return res.redirect("/");
 };
 export const videoDelete = (req, res) => {
   return res.send("videoDelete");
