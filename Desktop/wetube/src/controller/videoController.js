@@ -23,11 +23,12 @@ export const getUpload = (req, res) => {
   return res.render("upload", { pageTitle: "Upload Video" });
 };
 export const postUpload = async (req, res) => {
-  const { title, description, createDate } = req.body;
+  const { title, description, hashtags } = req.body;
   try {
     await Video.create({
       title,
       description,
+      hashtags: Video.formatHashtags(hashtags),
     });
     console.log(Video);
     return res.redirect("/");
@@ -54,11 +55,17 @@ export const getEdit = async (req, res) => {
 
 export const postEdit = async (req, res) => {
   const { id } = req.params;
-  const { title, description } = req.body;
-  await Video.findByIdAndUpdate(id, { title, description });
+  const { title, description, hashtags } = req.body;
+  await Video.findByIdAndUpdate(id, {
+    title,
+    description,
+    hashtags: Video.formatHashtags(hashtags),
+  });
   return res.redirect("/");
 };
 /DELETE (CRUD)/;
-export const videoDelete = (req, res) => {
-  return res.send("videoDelete");
+export const videoDelete = async (req, res) => {
+  const { id } = req.params;
+  await Video.findByIdAndDelete(id);
+  return res.redirect("/");
 };

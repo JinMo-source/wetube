@@ -35,6 +35,7 @@
 ### Videos
 
 - /videos/:id → Watch videos
+- /videos/:id/upload - Upload video
 - /videos/:id/edit → Edit Video
 - /videos/:id/delete → Delete Video
 

@@ -4,6 +4,6 @@ block content
     form(method="POST")
         input(name="title", placeholder="Video Title", required,value=`${video.title}`)
         input(placeholder="Description", required, type="text", name="description" value=`${video.description}`)
-        input(placeholder="Hashtags, separated by comma.", required, type="text", name="hashtags")
+        input(placeholder="Hashtags, separated by comma.", required, type="text", name="hashtags" value=`${video.hashtags}`)
         input(type="submit")
         
