@@ -1,0 +1,7 @@
+extends base.pug
+block content
+    h2 Video Watch
+    h3 #{pageTitle}
+    h4 #{video.title}
+    h4 #{video.description}
+    a(href=`/video/${video.id}/edit`) Edit
