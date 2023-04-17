@@ -49,13 +49,14 @@ export const watch = async (req, res) => {
 export const getEdit = async (req, res) => {
   const { id } = req.params;
   const video = await Video.findById(id);
-  console.log(video);
   return res.render("edit", { pageTitle: "EDIT", video });
 };
 
-export const postEdit = (req, res) => {
+export const postEdit = async (req, res) => {
   const { id } = req.params;
-  // console.log(req.body)
+  const { title, description } = req.body;
+  await Video.findByIdAndUpdate(id, { title, description });
+  return res.redirect("/");
 };
 /DELETE (CRUD)/;
 export const videoDelete = (req, res) => {
