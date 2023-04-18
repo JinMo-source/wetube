@@ -2,8 +2,7 @@ extends base.pug
 include mixins/video
 
 block content
-    h2 Welcome to wetube
-    a(href="/video/upload") Upload
+
     each video in videos
         +video(video)
     else
