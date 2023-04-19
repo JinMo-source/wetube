@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import User from "../models/User";
 
 export const getJoin = (req, res) => {
@@ -7,10 +6,22 @@ export const getJoin = (req, res) => {
 
 export const postJoin = async (req, res) => {
   console.log(req.body);
-  const { name, username, email, password } = req.body;
-  const user = User.create({ name, username, email, password });
+  const { name, username, email, password, password2, location } = req.body;
+  if (password != password2) {
+    return res.state(400).render("/join", {
+      errorMassage: "Password confirmation does not match.",
+    });
+  }
+  const exists = await User.exists({ $or: [{ username }, { email }] });
+  if (exists) {
+    return res.render("join", {
+      pageTitle,
+      errorMessage: "This username/email is already taken.",
+    });
+  }
 
-  return res.end();
+  await User.create({ name, username, email, password, location });
+  return res.redirect("/");
 };
 
 export const login = (req, res) => {
