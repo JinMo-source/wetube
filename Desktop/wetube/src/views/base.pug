@@ -7,9 +7,14 @@ html(lang="ko")
         header
             h1=pageTitle
             nav
-                a(href="/video/upload") Upload
-                a(href="/join") Join
-                a(href="/login") Login
+                ul
+                    li 
+                        a(href="/video/upload") Upload
+                    li
+                        a(href="/join") Join
+                    li
+                        a(href="/login") Login
+
                 
         main
             block content
