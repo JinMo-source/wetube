@@ -8,12 +8,16 @@ html(lang="ko")
             h1=pageTitle
             nav
                 ul
-                    li 
-                        a(href="/video/upload") Upload
-                    li
-                        a(href="/join") Join
-                    li
-                        a(href="/login") Login
+                    if loggedIn
+                        li 
+                            a(href="/video/upload") Upload
+                        li 
+                            a(href="/video/logout") Logout
+                    else
+                        li
+                            a(href="/join") Join
+                        li
+                            a(href="/login") Login
 
                 
         main
