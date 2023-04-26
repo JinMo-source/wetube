@@ -18,6 +18,7 @@ export const see = (req, res) => {
     return res.send("see");
   }
 };
+
 /CREATE (CRUD)/;
 export const getUpload = (req, res) => {
   return res.render("upload", { pageTitle: "Upload Video" });
