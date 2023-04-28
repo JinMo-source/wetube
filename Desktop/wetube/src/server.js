@@ -17,7 +17,7 @@ app.use(logger);
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: "HI",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
