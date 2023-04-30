@@ -21,7 +21,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/Youtube_Clone",
+      mongoUrl: process.env.MONGO_URL,
     }),
   })
 );

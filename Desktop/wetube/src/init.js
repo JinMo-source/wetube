@@ -1,5 +1,5 @@
-import app from "./server";
 import "dotenv/config";
+import app from "./server";
 import "./db";
 
 console.log(process.env.MONGO_URL, "ENV");

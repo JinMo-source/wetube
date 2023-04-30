@@ -29,7 +29,10 @@ export const postJoin = async (req, res) => {
 
 // login
 export const getLogin = (req, res) => {
-  return res.render("login", { pageTitle: "Login" });
+  return res.render("login", {
+    pageTitle: "Login",
+    githubLogin: process.env.CLIENT_ID,
+  });
 };
 
 export const postLogin = async (req, res) => {
@@ -55,6 +58,12 @@ export const postLogin = async (req, res) => {
   req.session.user = user;
 
   return res.redirect("/");
+};
+export const startGithubLogin = (req, res) => {
+  return res.send("h1");
+};
+export const finishGithubLogin = (req, res) => {
+  return res.send("h1");
 };
 // logout
 export const logout = (req, res) => {
